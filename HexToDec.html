@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter número decimal em hexadecimal</title>
+</head>
+<body>
+    <script>
+        //Constante dada pelo fabricante
+        let CONSTANTE_FABRICANTE = 65536;
+
+        //insirindo os dados, pedindo ao usuário antes de entrar na tela
+        var entrada = 55551;
+        console.log(entrada + " em decimal para hexadecimal: " + entrada.toString(16));
+        
+        //Pegando os valores convertidos e dividindo em duas Strings
+        var hex = entrada.toString(16);
+        console.log((hex.length)/2)
+        var hexInv = hex.substring((hex.length)/2 , hex.length) + hex.substring(0, (hex.length)/2);
+        console.log("Número hexadecimal invertido: " + hexInv);
+
+        //Transforma o número hexadecimal invertido em decimal (inteiro)
+        var inteiro = Number.parseInt(hexInv, 16);
+        //O parseInt converte qualquer base para a base decimal, desse modo, sou obrigado a colocar assim: parseInt(VARIAVEL, BASE_NUMERICA_ORIGINAL)
+        console.log("Numero hexadecimal invertido convertido para inteiro: " + inteiro);
+
+        //divide o número inteiro pela constante do fabricante
+        var resultado = inteiro/CONSTANTE_FABRICANTE;
+        console.log("INTEIRO DIVIDIDO POR "+CONSTANTE_FABRICANTE+" RESULTADO: "+resultado);
+        alert("INTEIRO DIVIDIDO POR "+CONSTANTE_FABRICANTE+" RESULTADO: "+resultado);
+
+    </script>
+</body>
+</html>
